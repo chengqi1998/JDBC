@@ -23,4 +23,12 @@ public class JDBCController {
 
         return maps;
     }
+
+    @GetMapping("/adduser")
+    public String userInsert(){
+        System.out.println("------------------------------------------------------------------------------->");
+        String sql="insert into userList (user,password) values ('xiaoming','123456')";
+        jdbcTemplate.update(sql);
+        return "addOK";
+    }
 }
