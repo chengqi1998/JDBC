@@ -13,13 +13,13 @@ import java.util.HashMap;
 @Configuration
 public class DruidConfig {
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.druid")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource druidDatasource(){
         System.out.println("配置德鲁伊数据源");
         return new DruidDataSource();
     }
     @Bean
-    public ServletRegistrationBean<StatViewServlet> statViewServlet(){
+    public ServletRegistrationBean statViewServlet(){
         System.out.println("配置Bean");
         ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
 //        后台的账号密码
